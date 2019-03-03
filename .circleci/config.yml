@@ -3,6 +3,10 @@ jobs:
   build:
     docker:
     - image: circleci/node:latest
+    filters:
+      branches:
+        only:
+          - master
     working_directory: ~/repo
 
     steps:
