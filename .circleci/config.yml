@@ -6,9 +6,9 @@ jobs:
     working_directory: ~/repo
 
     steps:
-    - checkout
+      - checkout
 
- - restore_cache:
+      - restore_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
 
       - run: npm install
