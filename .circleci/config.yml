@@ -11,7 +11,10 @@ jobs:
       - restore_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: npm run build
+      - run:
+          name: gatbsy build deploy
+          command: |
+            npm run deploy
 
       - save_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
