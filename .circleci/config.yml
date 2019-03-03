@@ -11,7 +11,7 @@ jobs:
       - restore_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: npm install
+      - run: npm run deploy
 
       - save_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
@@ -22,12 +22,3 @@ jobs:
           root: ~/repo
           paths:
             - node_modules
-
-  lint:
-      working_directory: ~/repo
-      <<: *defaults
-      steps:
-        - checkout
-        - attach_workspace:
-            at: ~/repo
-        - run: npm run lint
