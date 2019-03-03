@@ -22,3 +22,12 @@ jobs:
           root: ~/repo
           paths:
             - node_modules
+
+  lint:
+      working_directory: ~/repo
+      <<: *defaults
+      steps:
+        - checkout
+        - attach_workspace:
+            at: ~/repo
+        - run: npm run lint
