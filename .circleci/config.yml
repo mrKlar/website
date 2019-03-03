@@ -11,7 +11,7 @@ jobs:
       - restore_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
 
-      - run: npm deploy
+      - run: npm run deploy
 
       - save_cache:
           key: node-v2-{{ checksum "package.json" }}-{{ arch }}
