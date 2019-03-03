@@ -1,3 +1,3 @@
 import React from "react"
 
-export default props => <h1>With cname in srch  {props.headerText}</h1>
+export default props => <h1>With cname in static dir {props.headerText}</h1>
